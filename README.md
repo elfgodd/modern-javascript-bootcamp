@@ -108,3 +108,44 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_gramma
 
 let numOfHens = 6;
 let NumOfHens = 9;
+
+### UNARY OPERATORS
+
+let score = 0;
+score = score + 10; // 10
+score += 1; // 11
+score += 10; // 21
+score -= 11; // 10
+
+let bonusMult = 5;
+score x= bonusMult // 50
+
+let counter = 0;
+counter++;
+counter // 1
+counter--
+counter // 0
+
+### CONST
+
+const works just like let, except you CANNOT change the value
+
+const hens2 = 4;
+hens2 = 20; // ERROR!
+// NOT ALLOWED!
+const age = 17;
+age = age + 1; // ERROR!
+
+### WHY USE CONST?
+
+const pi = 3.14159;
+const daysInWeek = 7;
+const minHeightForRide = 60;
+// Once we cover Arrays & Objects, we'll see other situations where const makes sense over let.
+
+### VAR
+
+var tripDistance = 7.4;
+
+Before let & const, var was the only way of declaring variables. These days,
+there isn't really a reason to use it, but you will see it a lot on older code.
