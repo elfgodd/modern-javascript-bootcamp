@@ -5,7 +5,7 @@
 They are TRUE or FALSE
 
 let isLoggedIn = True;
-isLoggedIn = False;
+isLoggedIn = False;<!--  -->
 let gameOver = False;
 const isWaterWet = true;
 
