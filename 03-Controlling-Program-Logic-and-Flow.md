@@ -125,3 +125,84 @@ console.log("NEEDS IMPROVEMENT");
 else {
 console.log("INVALID RATING!");
 }
+
+### NESTING CONDITIONALS
+
+we can nest conditionals inside conditionals
+
+let password = "cat dog";
+if (password.length >= 6) {
+if (password.indexOf(' ') !== -1) {
+console.log("Password cannot include spaces");
+}
+else {
+console.log("Valid password!!");
+}
+}
+else {
+console.log("Password too short!");
+}
+
+### TRUTHY & FALSY VALUES
+
+All values have an inherent truthy or falsy boolean value
+
+Falsy values:
+false
+0
+"" // (empty string)
+null
+undefined
+NaN
+
+Everything else is truthy!
+
+### Logical AND (&&)
+
+Both sides must be true in order for the whole thing to be true
+
+1 <= 4 && 'a' == 'a'; // true
+1 <= 2 && 5 === 5; // true
+9 > 10 && 9 >= 9; // false
+'abc'.length === 3 && 1 + 1 === 4; // false
+true && true; // true
+true && false; // false
+false && true; // false
+false && false; // false
+
+### Logical OR (||)
+
+(pip character above enter key)
+If one side is true, the whole thing is true
+
+// only one side needs to be true!
+
+1 !== 1 || 10 === 10 // true
+10 / 2 === 5 || null // true
+0 || undefined // false
+false || true // true
+true || false // true
+true || true // true
+false || false // false
+
+### NOT (!)
+
+!expression returns true if the expression is false
+!null // true
+!0 // true
+!'' // true
+!(0 === 0) // false
+!(3 <= 4) // false
+!45 // false
+!'asdas' // false
+
+### OPERATOR PRECEDENCE
+
+NOT (!) has higher precedence than && and ||
+&& has higher precedence than ||
+
+! && || // this is the order from most important to less
+You can alter this using parens ()
+let x = 7;
+x == 7 || x === 3 && x > 10; // true
+(x == 7 || x === 3) && x > 10; // false

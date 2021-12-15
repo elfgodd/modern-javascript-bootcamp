@@ -74,3 +74,98 @@ else {
     `Good Game. Your score of ${userScore} did not
     beat the high score of ${highScore}`);
 }
+
+// example 7
+let password = 'hellokitty';
+
+if (password.length >= 6) {
+  if (password.indexOf(' ') === -1) {
+    console.log('Valid Password!');
+  }
+  else {
+    console.log('Password is long enough, but cannot contain spaces')
+  }
+}
+else {
+  console.log('Password must be longer!');
+}
+
+// example 7
+let mystery = '';
+
+if (mystery) {
+  console.log('TRUTHY');
+}
+else {
+  console.log('FALSY');
+}
+
+// example 7
+let loggedInUser = null;
+
+if (loggedInUser) {
+  console.log('you are logged in');
+}
+else {
+  console.log('please log in');
+}
+
+// example 8
+password = 'tacotuesday';
+
+if (password.length >= 6 && password.indexOf(' ') === -1) {
+  console.log('valid password');
+}
+else {
+  console.log('invalid password');
+}
+
+// example 9
+num = 3;
+
+if (num >= 1 && num <= 10) {
+  console.log('Number is between 1 and 10');
+}
+else {
+  console.log('Please guess a number between 1 and 10')
+}
+
+// example 10
+let age = 26;
+
+if (age < 6 || age >= 65) {
+  console.log('you get in for free');
+}
+else {
+  console.log('that will be $10 please')
+}
+
+// example 11
+// purple orchid violet
+let color = 'purple';
+if (color === 'purple' || color === 'orchid' || color === 'violet') {
+  console.log('great choice!');
+}
+
+// example 12
+// If there isn't a logged in user
+loggedInUser = 'user123'
+if (!loggedInUser) {
+  console.log('get out of here');
+}
+else {
+  console.log('thanks for logging in');
+}
+
+// example 13
+let flavor = 'watermelon';
+if (flavor !== 'grape' && flavor !== 'cherry') {
+  console.log('we dont have that flavor!1');
+}
+
+// example 14
+if (!(flavor === 'grape' || flavor === 'cherry')) {
+  console.log('we dont have that flavor!2');
+}
+
+// example 15
