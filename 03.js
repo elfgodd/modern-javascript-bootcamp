@@ -169,3 +169,59 @@ if (!(flavor === 'grape' || flavor === 'cherry')) {
 }
 
 // example 15
+let day = 7;
+
+switch (day) {
+  case 1:
+    console.log('monday');
+    break;
+  case 2:
+    console.log('tuesday');
+    break;
+  case 3:
+    console.log('wednesday');
+    break;
+  case 4:
+    console.log('thursday');
+    break;
+  case 5:
+    console.log('friday');
+    break;
+  case 6:
+    console.log('saturday');
+    break;
+  case 7:
+    console.log('sunday');
+    break;
+  default:
+    console.log('not a valid day');
+  }
+
+  // example 16
+  let emoji = 'lips';
+
+  switch (emoji) {
+    case 'happy face':
+    case 'sad face':
+      console.log('yellow');
+      break;  
+    case 'eggplant':
+      console.log('purple');
+      break;  
+    case 'lips':  
+    case 'heart':
+      console.log('red');
+      break;    
+    default:
+      console.log('no face in this data');
+  }
+
+    // example 17
+    num = 2;
+
+    num === 7 ? console.log('lucky!') : console.log('bad');
+
+    let statusUser = 'offline' // anything will run green
+    
+    color = statusUser === 'offline' ? 'red' : 'green';
+    console.log(color)

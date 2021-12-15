@@ -206,3 +206,9 @@ You can alter this using parens ()
 let x = 7;
 x == 7 || x === 3 && x > 10; // true
 (x == 7 || x === 3) && x > 10; // false
+
+### SWITCH
+
+### TERNARY OPERATOR
+
+condition ? expIfTrue: expIfFalse
