@@ -54,3 +54,14 @@ Shift - remove from start
 Unshift - add to start
 
 You might mix up shift and unshift for a while
+
+### MORE METHODS!
+
+concat - merge arrays
+includes - merge arrays
+indexOf - just like str.indexOf
+join - creates a string from arr
+reverse - reverses an array
+slice - copy portion of an arr
+splice - remove/replace elements
+sort - sorts an array
