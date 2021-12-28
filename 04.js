@@ -131,3 +131,54 @@ console.log(animals.slice(-3, -1));
 
 let copySlice = animals.slice();
 console.log(copySlice);
+
+let months = ['jan', 'march', 'april', 'June'];
+console.log(months);
+// inserts at index 1
+months.splice(1, 0, 'feb');
+console.log(months);
+// replaces 1 element at index 4
+months.splice(4, 1, 'may');
+console.log(months);
+
+console.log(animals);
+animals.splice(1, 0, 'octopus');
+console.log(animals);
+
+animals.splice(3, 2);
+console.log(animals);
+
+animals.splice(3, 0, 'snake', 'frog');
+console.log(animals);
+
+animals.splice(0, 2, 'SHARK!', 'OCTOPUS!');
+console.log(animals);
+
+console.log(months);
+months.sort();
+console.log(months);
+
+let arraySort = [1, 30, 4, 21, 10000];
+arraySort.sort();
+console.log(arraySort);
+
+console.log(topSongs);
+console.log(topSongs.sort());
+console.log(topSongs);
+
+// Reference Types
+let numz = [1, 2, 3, 4, 5];
+console.log(numz);
+let otherNumz = numz;
+console.log(otherNumz);
+
+numz.push(6, 7, 8);
+console.log(numz);
+console.log(otherNumz);
+otherNumz.pop();
+otherNumz.pop();
+otherNumz.pop();
+otherNumz.pop();
+console.log(numz);
+console.log(otherNumz);
+

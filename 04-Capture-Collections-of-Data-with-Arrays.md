@@ -65,3 +65,19 @@ reverse - reverses an array
 slice - copy portion of an arr
 splice - remove/replace elements
 sort - sorts an array
+
+### NOW
+
+Work with Arrays
+Write Object Literals
+Understand Reference Types
+Use common Array/Object methods
+
+### VALUES CAN CHANGE
+
+As long as the reference remains the same
+const myEggs = ['brown', 'brown'];
+myEggs.push('purple);
+myEggs[0] = 'green';
+
+myEggs = ['blue', 'pink']; // NO! TypeError
