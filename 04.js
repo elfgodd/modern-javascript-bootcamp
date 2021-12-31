@@ -182,3 +182,39 @@ otherNumz.pop();
 console.log(numz);
 console.log(otherNumz);
 
+// Using consts with Arrays
+let x = 34;
+x += 5;
+console.log(x);
+const city = 'Lisbon';
+console.log(city);
+// city = 'Londron'; // Uncaught TypeError: invalid assignment to const 'city'
+
+const foods = ['milk'];
+foods.push('chocolate');
+console.log(foods);
+foods.unshift('tortillas');
+console.log(foods);
+foods.pop();
+foods.pop();
+foods.pop();
+console.log(foods);
+// foods = []; // Uncaught TypeError: invalid assignment to const 'foods'
+
+const arrayWhatEverWeWant = [null, undefined, NaN, 'abcd', 123456789];
+console.log(arrayWhatEverWeWant);
+
+
+const animalPairs = [
+  ['doe', 'buck'],
+  ['ewe', 'ram'],
+  ['peahen', 'peacock']
+];
+console.log(animalPairs)
+console.log(animalPairs[2]);
+console.log(animalPairs[2][0]);
+console.log(animalPairs[2][1]);
+console.log(animalPairs[1][1]);
+animalPairs[0][1] = 'stag';
+console.log(animalPairs[0]);
+

@@ -81,3 +81,16 @@ myEggs.push('purple);
 myEggs[0] = 'green';
 
 myEggs = ['blue', 'pink']; // NO! TypeError
+
+### NESTED ARRAYS
+
+We can store arrays inside others arrays!
+
+const colors = [
+['red', 'crimson'],
+['orange', 'dark orange'],
+['yellow', 'golden rod'];
+['green', 'olive'];
+['blue', 'navy blue'];
+['purple', 'orchid'];
+]
