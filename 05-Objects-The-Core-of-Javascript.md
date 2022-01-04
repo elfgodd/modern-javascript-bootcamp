@@ -78,7 +78,7 @@ price: 29.99,
 quantity: 3
 },
 {
-product: 'Fire Stick,
+product: 'Fire Stick',
 price: 39.99,
 quantity: 2
 }
@@ -93,3 +93,26 @@ midterm: 92,
 final: 88
 }
 }
+
+### Nested Arrays & Objects
+
+const game = {
+player1: {
+username: 'Blue',
+playingAs: 'X'
+},
+player2: {
+username: 'Muffins',
+playingAs: '0'
+},
+board : [ ['0', null, 'X'], ['X', '0', 'X'],
+[null, '0', 'X'] ]
+};
+
+### Objects and Reference Types
+
+Objects and Arrays are Reference types
+
+### Array Object Equality
+
+We are comparing Reference Types Addresses
