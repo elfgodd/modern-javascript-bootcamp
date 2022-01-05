@@ -116,3 +116,31 @@ let moreNums = numsEquality;
 console.log(numsEquality == mystery); // false
 console.log(numsEquality === mystery); // false
 console.log(numsEquality === moreNums); // true
+
+const user = {
+  username : 'CherryGarcia8',
+  email: 'garcia@gmail.com',
+  notifications: [] // ['message']
+};
+if (user.notifications === []) {// this is false
+  console.log('NO NEW NOTIFICATIONS!');
+}
+console.log([] === []); // false can't compare Reference Types, new place in memory
+
+if (user.notifications.length === 0) {// this is false
+  console.log('NO NEW NOTIFICATIONS!');
+}
+if (!user.notifications.length) {// this is false
+  console.log('NO NEW NOTIFICATIONS!');
+}
+
+console.log({} === {}); // false
+console.log({a:1} === {a:1}); // false
+
+let dat1 = {a: 1};
+let dat2 = {a: 1};
+console.log(dat1 === dat2); // false
+let compareObject = dat2;
+console.log(dat1 === compareObject); // false
+let dat3 = dat1;
+console.log(dat3 === dat1); // true

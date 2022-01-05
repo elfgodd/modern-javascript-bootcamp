@@ -115,4 +115,5 @@ Objects and Arrays are Reference types
 
 ### Array Object Equality
 
+Arrays and Objects behave the same way when we checking for Equality
 We are comparing Reference Types Addresses
