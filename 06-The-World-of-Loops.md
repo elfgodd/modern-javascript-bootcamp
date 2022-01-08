@@ -66,3 +66,59 @@ for (let j = 0; j < str.length; j++) {
 console.log(' Inner:', str[j]);
 }
 }
+
+### WHILE LOOPS
+
+A while loop continues to run as long
+as its test condition is true
+
+let num = 0;
+while (num < 100) {
+console.log(num);
+num++;
+} // 0 1 2 3 4
+
+### FOR...OF
+
+A nice and easy way of iterating over arrays
+(or other iterable objects)
+
+for (variable of iterable) {
+statement
+}
+
+### For...Of with Objects
+
+Object is not iterable
+movieReviews[1], this returns undefined
+for (let x of movieReviews) {
+console.log(x)
+}, // TypeError: is not iterable
+
+### OBJECTS!
+
+We can loop over the keys of
+an object, using Object.keys()
+
+const movieReviews = {
+Amadeus: 10,
+Arrival: 9.5,
+Alien: 9,
+Amelie : 8
+};
+
+for (let movie of Object.keys(movieReviews)) {
+let score = movieReviews[movie];
+console.log(`I rated $[movie` ${score}/10`);
+}
+I rated Amadeus 10/10
+I rated Arrival 9.5/10
+I rated Alien 9/10
+I rated Amelie 8/10
+
+### FOR...IN
+
+Loop over the keys in an object
+for (variable in object) {
+statement
+}

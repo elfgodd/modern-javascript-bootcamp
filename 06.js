@@ -81,10 +81,133 @@ const gameBoard = [
 ];
 
 let totalScore = 0;
-for (i = 0; i < gameBoard.length; i++) {
+for (let i = 0; i < gameBoard.length; i++) {
   let row = gameBoard[i];
   for (j = 0; j < row.length; j++) {
     totalScore += row[j];
   }
 }
 console.log('totalScore: ', totalScore);
+
+let k = 0;
+while (k <= 5) {
+  console.log('j: ', k);
+  k++;
+} // 0, 1, 2, 3, 4, 5
+
+const target = Math.floor(Math.random() * 10)
+let guess = Math.floor(Math.random() * 10);
+// while (some condition)
+// in the loop, update or attempt to make that condition
+while (guess !== target) {  
+  console.log(`Target: ${target} Guess: ${guess}`);
+  guess = Math.floor(Math.random() * 10);
+}
+console.log(`Target: ${target} Guess: ${target}`);
+console.log('CONGRATS YOU WIN!');
+
+// break: not common to use it in a for loop
+for (let i = 0; i < 10; i++) {
+  console.log(i);
+  if (i === 5) {
+    break;
+  }
+}
+
+
+guess = Math.floor(Math.random() * 10);
+while (true) {
+  if (target === guess) break;
+  console.log(`Target: ${target} Guess: ${guess}`);
+  guess = Math.floor(Math.random() * 10);
+}
+console.log(`Target: ${target} Guess: ${target}`);
+console.log('CONGRATS YOU WIN!');
+
+console.log('\n');
+let subreddits = [ 'soccer', 'popheads', 'cringe', 'books' ];
+
+for (let i = 0; i < subreddits.length; i++) {
+  console.log(subreddits[i]);
+}
+console.log('\n');
+for (let sub of subreddits) {
+  console.log(sub);
+}
+console.log('\n');
+for (let char of 'cockadoodledoo') {
+  console.log(char.toUpperCase());
+}
+console.log('\n');
+
+const magicSquare = [
+  [ 2, 7, 6 ],
+  [ 9, 5, 1 ],
+  [ 4, 3, 8 ]
+]
+
+for (let i = 0; i < magicSquare.length; i++) {
+  let row = magicSquare[i]
+  let sum = 0;
+  for (let j = 0; j < row.length; j++) {
+    console.log(row[j]);
+    sum += row[j];
+  }
+  console.log(`${row} summed to ${sum}`);
+}
+console.log('\n');
+
+for (let row of magicSquare) {
+  let sum = 0;
+  for (let num of row) {
+    sum += num;
+  }
+  console.log(`${row} summed to ${sum}`);
+}
+console.log('\n');
+
+const words1 = [ 'mail', 'milk', 'bath', 'black' ];
+const words2 = [ 'box', 'shake', 'tub' , 'berry' ];
+// if you need a index, regular for loop is easier
+for(let i = 0; i < words1.length; i++) {
+  console.log(`${words1[i]}${words2[i]}`);
+}
+console.log('\n');
+const movieReviews = {
+  Arrival : 9.5,
+  Alien: 9,
+  Amelie : 8,
+  'In Bruges': 9,
+  Amadeus : 10,
+  'Kill Bill' : 8,
+  'Little Miss Sunshine' : 8.5,
+  Coraline : 7.5
+};
+
+console.log(Object.keys(movieReviews));
+console.log(Object.values(movieReviews));
+console.log('\n');
+
+for (let movie of Object.keys(movieReviews)) {
+  console.log(movie);
+}
+console.log('\n');
+for (let movie of Object.values(movieReviews)) {
+  console.log(movie);
+}
+console.log('\n');
+for (let movie of Object.keys(movieReviews)) {
+  console.log(movie, movieReviews[movie]);
+}
+
+const ratings = Object.values(movieReviews);
+let total1 = 0;
+for (let r of ratings) {
+  total1 += r;
+}
+let avg1 = total1 / ratings.length;
+console.log('Average: ', avg1);
+console.log('\n');
+console.log(Object.keys(movieReviews)[1]);
+console.log(Object.keys(movieReviews)[4]);
+
