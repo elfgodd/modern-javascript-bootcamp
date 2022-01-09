@@ -211,3 +211,29 @@ console.log('\n');
 console.log(Object.keys(movieReviews)[1]);
 console.log(Object.keys(movieReviews)[4]);
 
+console.log('\n');
+const jeopardyWinnings = {
+  regularPlay : 2522700,
+  watsonChallenge : 300000,
+  tournamentOfChampions : 500000,
+  battleOfTheDecades : 100000 
+};
+
+for (let prop in jeopardyWinnings) {
+  console.log(prop);
+  console.log(jeopardyWinnings[prop]);
+}
+console.log('\n');
+let total2 = 0;
+for (let prop in jeopardyWinnings) {
+  total2 += jeopardyWinnings[prop];
+}
+console.log(`Ken Jennings Total Earnings: ${total2}`);
+console.log(jeopardyWinnings['regularPlay']);
+console.log('\n');
+
+for (let k in [88, 99, 77, 66]) {
+  console.log(k);
+}
+console.log('\n');
+console.log(jeopardyWinnings);
