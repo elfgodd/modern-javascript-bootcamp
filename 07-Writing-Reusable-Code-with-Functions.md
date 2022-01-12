@@ -49,3 +49,53 @@ avg(20, 25) -> 22.5
 "hello".indexOf('h') // 0
 // Different outputs...
 "hello".indexOf('o'); // 4
+
+### GREET TAKE 2
+
+function greet(person) {
+console.log(`Hi, ${person}!`);
+}
+greet('Arya'); // "Hi, Arya!"
+greet('Ned'); // "Hi, Ned!"
+
+### return
+
+Built-in methods return values when we call them
+We can store those values:
+
+const yell = "I will end you".toUpperCase();
+yell; // "I WILL END YOU"
+
+const idx = ['a', 'b', 'c'].indexOf('c');
+idx; // 2
+
+### NO RETURN!
+
+Our functions print values out,
+but do NOT return anything
+
+function add(x, y) {
+console.log(x + y);;
+}
+
+const sum = add(10, 16);
+sum; // undefined
+
+### FIRST RETURN!
+
+Now we can capture a return value in a variable!
+
+function add(x, y) {
+return x + y; // RETURN!
+}
+
+const sum = add(10, 16);
+sum; // 26
+
+const answer = add(100, 200);
+answer; // 300
+
+### RETURN
+
+The return statement ends function execeution AND
+specifies the value to a be returned by that function
