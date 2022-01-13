@@ -136,6 +136,7 @@ console.log(resultPurple2);
 
 console.log('\n');
 
+/* Function Challenge 1 */
 // Write a isValidPassword function
 // It accepts 2 arguments: password and username
 // Password must:
@@ -219,3 +220,132 @@ console.log(isValidPassword('asfg2', 'asd')); // to short
 console.log(isValidPassword('aasjasd askjd', 'asdasdasd')); // has space
 console.log(isValidPassword('chicken1234', 'chicken')); // too similar
 console.log(isValidPassword('chiken1234', 'chicken')); // true
+
+console.log('\n');
+/* Function Challenge 2 */
+// Write a function to find the average value in an array of numbers
+// avg([0, 50]) // 25
+// avg([75, 76, 80, 95, 10]) // 85.2
+
+function avg(arr){
+  let total = 0;
+  // loop over each num
+  for(let num of arr){
+    // add them together
+    total += num;
+  }
+  // divide by number of nums
+  let res = total / arr.length;
+  return res;
+}
+console.log(avg([0, 50])); // 25
+console.log(avg([75,76,80,95,100])); // 85.2
+
+console.log('\n');
+/* Function Challenge 3 */
+/* A pangram is a sentence that contains every letter
+of the alphabet, like:
+"The quick brown fox jumps over the lazy dog"
+
+Write a function called isPangram, which checks to
+see if a given sentence contains every letter of the
+alphabet. Make sure you ignore string casing!
+
+isPangram('The five boxing wizards jump quickly') // true
+isPangram('The five boxing wizards jump quick') // false
+*/
+
+function isPangram(sentence){
+  let lowerCased = sentence.toLowerCase();
+  for(let char of 'abcdefghijklmnopqrstuvwxyz'){
+    if(lowerCased.indexOf(char) === -1){
+      return false;
+    }
+  }
+  return true;
+}
+console.log(isPangram('The five boxing wizards jump quickly'));
+console.log(isPangram('The five boxing wizards jump quick'));
+
+console.log('\n');
+function isPangram(sentence){
+  let lowerCased = sentence.toLowerCase();
+  for(let char of 'abcdefghijklmnopqrstuvwxyz'){
+    if(!lowerCased.includes(char)){
+      return false;
+    }
+  }
+  return true;
+}
+console.log(isPangram('The five boxing wizards jump quickly'));
+console.log(isPangram('The five boxing wizards jump quick'));
+
+console.log('\n');
+/* Write a getCard() function which returns a random
+playing card object, like:
+  {
+    value: 'K',
+    suit: 'Clubs  
+  }
+Pick a random value from:
+----1,2,3,4,5,6,7,8,9,10,J,Q,K,A
+Pick a random suit from:
+----clubs,spades,hearts,diamonds
+Return both in an object
+*/
+function pick(arr){
+  // return random element from arr
+  const idx = Math.floor(Math.random() * arr.length);
+  return arr[idx];
+}
+
+function getCard(){
+  const values = [
+    '1','2','3','4','5','6','7','8','9','10','J','Q','K','A'
+  ];
+  const valIdx = Math.floor(Math.random() * values.length);
+  const value = values[valIdx];
+
+  const suits = ['clubs', 'spades', 'hearts', 'diamonds'];
+  const suitIdx = Math.floor(Math.random() * suits.length);
+  const suit = suits[suitIdx];
+  return {
+    value: value,
+    suit: suit
+  };
+}
+console.log(getCard());
+console.log(getCard());
+console.log(getCard());
+console.log(getCard());
+console.log(getCard());
+
+console.log('\n');
+function getCard(){
+  const values = [
+    '1','2','3','4','5','6','7','8','9','10','J','Q','K','A'
+  ];
+  const value = pick(values);
+  const suits = ['clubs', 'spades', 'hearts', 'diamonds'];
+  const suit = pick(suits);
+  return { value: value, suit: suit };
+}
+console.log(getCard());
+console.log(getCard());
+console.log(getCard());
+console.log(getCard());
+console.log(getCard());
+
+console.log('\n');
+function getCard(){
+  const values = [
+    '1','2','3','4','5','6','7','8','9','10','J','Q','K','A'
+  ];  
+  const suits = ['clubs', 'spades', 'hearts', 'diamonds'];
+  return { value: pick(value), suit: pick(suits) };
+}
+console.log(getCard());
+console.log(getCard());
+console.log(getCard());
+console.log(getCard());
+console.log(getCard());
