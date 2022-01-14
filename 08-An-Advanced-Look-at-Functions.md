@@ -62,3 +62,64 @@ square(7); // 49
 ### FUNCTIONS ARE... OBJECTS!
 
 ### HIGH ORDER FUNCTIONS
+
+Functions that operate on/with other functions. They can:
+
+- Accept other functions as arguments
+- Return a function
+
+### FUNCTIONS AS ARGUMENTS
+
+function callTwice(func) {
+func();
+func();
+}
+
+function laugh() {
+console.log("HAHAHAHAHAHAHAHAHAHA");
+}
+callTwice(alught); // pass a function as an argument!
+// "HAHAHAHAHAHAHAHAHAHA"
+// "HAHAHAHAHAHAHAHAHAHA"
+
+### RETURNING FUNCTIONS
+
+function makeBetweenFunc(min, max) {
+return function (val) {
+return val >= min && val <= max;
+}
+}
+
+const inAgeRange = makeBetweenFunc(18, 100);
+
+inAgeRange(17); // false
+inAgeRange(68); // true
+
+### CALLBACKS FUNCTIONS
+
+A callback functon is a function passed into another
+function as an argument, which is then invoked inside
+the outer function
+
+### HOISTING
+
+Variables order declaration
+
+let animal = 'tiger';
+console.log(animal); // 'tiger'
+
+console.log(beast); // error
+let beast = 'grizzly';
+
+// Functions are hoisted at the top of the file
+how(); // works!
+function howl() {
+console.log('AWOOOOO);
+}
+how(); // works!
+
+// Functions expressions are not hoisted
+hoot(); // error
+let hoot = function () {
+console.log('HOOOO HOOOOO');
+}

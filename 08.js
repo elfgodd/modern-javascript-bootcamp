@@ -183,17 +183,123 @@ const thing = {
 }
 console.log(thing.doSomething(50,2)); // 100
 
+console.log("\n");
+function callThreeTimes(func) {
+  func();
+  func();
+  func();
+}
+
+function cry() {
+  console.log("BOO HOO I'M SO SAD!");
+}
+cry();
+cry();
+cry();
+console.log("\n");
+callThreeTimes(cry);
+
+console.log("\n");
+function rage() {
+  console.log("I HATE EVERYTHING!");
+}
+callThreeTimes(rage);
+console.log("\n");
+
+function repeatNTimes(action, num) {
+  for(let i = 0; i < num; i++) {
+    action();
+  }
+}
+
+repeatNTimes(rage, 5);
+repeatNTimes(cry, 5);
+
+console.log("\n");
+function pickOne(f1, f2) {
+  let rand = Math.random();
+  console.log(rand);
+  if(rand < 0.5) {
+    f1();
+  } else {
+    f2();
+  }
+}
+pickOne(cry, rage);
+
+console.log("\n");
+function multiplyByNew(num){
+  return function() {
+    console.log("HI!!");
+  }
+}
+const mystery = multiplyByNew();
+console.log(mystery);
+console.log(mystery());
+
+console.log("\n");
+function multiplyBy(num){
+  return function(x) {
+    return x * num;
+  }
+}
+// stores 3 in the num variable
+const triple = multiplyBy(3);
+console.log(triple(6)); // 18, x * num, 6 * 3
+console.log(triple(2)); // 6, x * num, 2 * 3
+console.log(triple(9)); // 27, x * num, 9 * 3
+
+console.log("\n");
+// stores 2 in the num variable
+const double = multiplyBy(2);
+console.log(double(5)); // 10, x * num, 5 * 2
+console.log(double(3)); // 6, x * num, 3 * 2 
+
+console.log("\n");
+const halve = multiplyBy(0.5);
+console.log(halve(9)); // 4.5, x * num, 9 * 0.5
+
+console.log("\n");
+function makeBetweenFunc2(x, y) {
+  return function(num) {
+    if(num >= x && num <= y){
+      return true;
+    }
+    return false; 
+  }
+}
+
+function makeBetweenFunc(x, y) {
+  return function (num) {
+    return num >= x && num <= y
+  }
+}
+const isChild = makeBetweenFunc(0, 18);
+console.log(isChild(17)); // true
+console.log(isChild(99)); // false
+console.log("\n");
+const isInNineties = makeBetweenFunc(1990, 1999);
+console.log(isInNineties(1989)); // false
+console.log(isInNineties(1992)); // true
+
+console.log("\n");
+const isNiceWeather = makeBetweenFunc(60, 79);
+console.log(isNiceWeather(45)); // false
+console.log(isNiceWeather(76)); // true
+
+// after 5 seconds run the func
+// setTimeout(func, 5000);
+setTimeout(function () {
+  console.log('setTimeout, 2000');
+}, 2000);
 
 
 
-console.log("\n");
-console.log("\n");
-console.log("\n");
-console.log("\n");
-console.log("\n");
-console.log("\n");
-console.log("\n");
-console.log("\n");
+
+
+
+
+
 console.log("\n");
 console.log("\n");
 console.log("\n");
