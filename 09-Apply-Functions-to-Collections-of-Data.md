@@ -40,3 +40,37 @@ return t.toUpperCase();
 })
 texts; // ["rofl", "lol", "omg", "ttyl"]
 caps; // ["ROFL", "LOL", "OMG", "TTYL"]
+
+### ARROW FUNCTIONS
+
+"Syntactically compact alternative" to a regular function expression
+
+const square = (x) => {
+return y x y;
+}
+
+const sum = (x, y) => {
+return x + y
+}
+
+### IMPLICIT RETURN
+
+All these functions do the same thing:
+const isEven = function (num) {
+// regular function expression
+return num % 2 === 0;
+}
+const isEven = (num) => {
+// arrow function with parens around param
+return num % 2 === 0;
+}
+const isEven = num => {
+// no parens around param
+return num % 2 === 0;
+}
+const isEven = num => {
+// implicit return
+num % 2 === 0;
+}
+// one-liner implicit return
+const isEven = num => num % 2 ===0;
