@@ -74,3 +74,38 @@ num % 2 === 0;
 }
 // one-liner implicit return
 const isEven = num => num % 2 ===0;
+
+### FIND
+
+Returns the value of the first element in the array
+that satisfies the provided testing function
+
+let movies = [
+"The Fantastic Mr. Fox",
+"Mr. and Mrs. Smith",
+"Mrs. Doubtfire",
+"Mr. Deeds"
+]
+
+let movie = movies.find(movie => {
+return movie.includes('Mrs.')
+}) // "Mr. and Mrs. Smith"
+
+let movies2 = movies.find(m => m.indexOf('Mrs') === 0);
+// "Mrs. Doubtfire"
+
+### FILTER
+
+Creates a new array with all elements that pass the
+test implemented by the provided function
+
+const nums = [9, 8, 7, 6, 5, 4, 3, 2, 1];
+const odds = nums.filter(n => {
+return n % 2 === 1;
+// our callback returns true or false
+// if it returns true, n is added to the filtered array
+})
+// [9, 7, 5, 3, 1]
+
+const smallNums = nums.filter(n => n < 5);
+// [4, 3, 2, 1]

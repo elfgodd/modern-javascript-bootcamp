@@ -179,11 +179,90 @@ const parityTernary = nums.map((n) => (
 console.log('\n');
 const partityTernary1Line = nums.map(n => n % 2 === 0 ? console.log('isEven') : console.log('odd'))
 
+console.log('\n');
+let movies = [
+"The Fantastic Mr. Fox",
+"Mr. and Mrs. Smith",
+"Mrs. Doubtfire",
+"Mr. Deeds"
+]
+const movie = movies.find(movie => {
+  return movie.includes('Mrs');
+})
+
+console.log(movie)
+const movie2 = movies.find(m => (
+  m.indexOf('Mrs') === 0
+))
+console.log(movie2);
 
 console.log('\n');
-console.log('\n');
+const goodBook = books.find(b => (
+  b.rating >= 4.3
+))
+console.log(goodBook);
+
+const neilBook = books.find(b => (
+  b.authors.includes('Neil Gaiman')
+))
+console.log(neilBook);
 
 console.log('\n');
+const nums2 = [34, 35, 67, 54, 109, 102, 32, 9]
+
+const odds = nums2.filter(n => n % 2 === 1);
+console.log(odds);
+const evens = nums2.filter(n => n % 2 === 0);
+console.log(evens);
+const bigNums = nums2.filter(n => n > 50);
+console.log(bigNums);
+
 console.log('\n');
+const bookz = [{
+  title: 'Good Omens',
+  authors: ['Terry Pratchett', 'Neil Gaiman'],
+  rating: 4.25,
+  genres: ['fiction', 'fantasy']
+},
+{
+  title: 'Changing My Mind',
+  authors: ['Zadie Smith'],
+  rating: 3.83,
+  genres: ['nonfiction', 'essays']
+}
+{
+  title: 'Bone: The Complete Edition',
+  authors: ['Jeff Smith'],
+  rating: 4.42,
+  genres: ['fiction', 'graphic novel', 'fantasy']
+},
+{
+  title: 'American Gods',
+  authors: ['Neil Gaiman'],
+  rating: 4.11,
+  genres: ['fiction', 'fantasy']
+},
+{
+  title: 'A Gentleman in Moscow',
+  authors: ['Amor Towles'],
+  rating: 4.36,
+  genres: ['fiction', 'historical fiction']
+},
+{
+  title: 'The Name of the Wind',
+  authors: ['Patrick Rothfuss'],
+  rating: 4.54,
+  genres: ['fiction', 'fantasy']
+},
+{
+  title: 'Lord of the flies',
+  authors: ['William Golding'],
+  rating: 3.67,
+  genres: ['fiction']
+}
+]
+
+
+
 console.log('\n');
 console.log('\n');
