@@ -145,3 +145,32 @@ words.some(word => word[0] === 'Z'); // false
 
 // Do any words contain 'cake?
 words.some(w => w.includes('cake)) // true
+
+### SORT PT. 2
+
+arr.sort(compareFunc(a, b))
+If compareFunc(a, b) returns less than 0
+Sort a before b
+If compareFunc(a, b) returns 0
+Leave a and b unchanged with respect to each other
+If compareFunc(a, b) returns greater than 0
+Sort b before ass
+
+### REDUCE
+
+Executes a reducer function on each element of the array,
+resulting in a single value
+
+[3, 5, 7, 9, 11].reduce((accumulator, currentValue) => {
+return accumulator + currentValue;
+})
+
+### REDUCE INITIAL VALUE
+
+[4, 5, 6, 7, 8].reduce((acc, currVal) => {
+return acc + currentVal;
+}); // return 30
+
+[4, 5, 6, 7, 8] .reduce((acc, currVal) => {
+return acc + currVal
+}, 100); // 130

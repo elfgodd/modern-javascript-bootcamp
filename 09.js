@@ -333,3 +333,77 @@ console.log('\n');
 const any2Authors = bookz.some(book => book.authors.length === 2);
 console.log('any2Authors: ', any2Authors);
 console.log('\n');
+
+
+const prices = [400.50, 3000, 99.99, 35.99, 12.00, 9500];
+console.log(prices);
+console.log('\n');
+console.log(prices.sort());
+
+console.log('\n');
+const ascSort = prices.sort((a, b) => a - b);
+console.log("ascSort: ", ascSort);
+
+console.log('\n');
+const descSort = prices.sort((a, b) => b - a);
+console.log("descSort: ", descSort);
+
+// Sort mutates the original data, one of the few array methods
+// 3 variables pointing to the same array, 1 array in memory
+console.log("ascSort: ", ascSort);
+console.log("prices array: ", prices);
+
+console.log('\n');
+// slice() fixes this issues
+const pricesSlice = prices.slice().sort((a, b) => a - b);
+console.log("pricesSlice", pricesSlice);
+
+// console.log('\n');
+
+// console.log(bookz);
+console.log('\n');
+// We can't do a-b || b-a, because both are objects in books2
+bookz.sort((a, b) => a.rating - b.rating)
+console.log(bookz);
+// bookz.sort((a, b) => b.rating - a.rating);
+console.log(bookz);
+
+console.log('\n');
+// .reduce((accumulator, currentValue))
+const numz = [3, 4, 5, 6, 7];
+const product = numz.reduce((acc, val) => {
+  return acc * val;
+})
+console.log("product: ", product);
+
+console.log('\n');
+let grades = [89, 96, 58, 77, 62, 93, 81, 99, 73];
+console.log("grades: ", grades);
+
+console.log('\n');
+const topScore = grades.reduce((max, currVal) => {
+  if(currVal > max) return currVal;
+  return max;
+})
+console.log("topScore: ", topScore); // 99
+
+// A shorter option w/ Math.max & implicit return
+const topScore2 = grades.reduce((max, currVal) => (
+  Math.max(max, currVal)
+))
+console.log("topScore2: ", topScore2);
+
+console.log('\n');
+const minScore = grades.reduce((min, curr) => {
+  return Math.min(min, curr);
+})
+console.log("minScore: ", minScore);
+
+console.log('\n');
+console.log('\n');
+console.log('\n');
+console.log('\n');
+console.log('\n');
+console.log('\n');
+
+
