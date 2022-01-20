@@ -262,6 +262,12 @@ const bookz = [{
     genres: ['fiction', 'short stories']
   },
   {
+    title: 'A Truly Horrible Book',
+    authors: ['Xavier Time'],
+    rating: 2.18,
+    genres: ['fiction', 'garbage']
+  },
+  {
     title: 'The Way of Kings',
     authors: ['Brandon Sanderson'],
     rating: 4.65,
@@ -400,10 +406,42 @@ const minScore = grades.reduce((min, curr) => {
 console.log("minScore: ", minScore);
 
 console.log('\n');
-console.log('\n');
-console.log('\n');
-console.log('\n');
-console.log('\n');
-console.log('\n');
+const sum3 = [10, 20, 30, 40, 50].reduce((sum, currVal) => (
+  sum + currVal
+))
+console.log("sum3: ", sum3);
 
+console.log('\n');
+const sum4 = [10, 20, 30, 40, 50].reduce((sum, currVal) => (
+  sum + currVal
+), 1000) // starts at 1000
+console.log("sum4: ", sum4);
 
+console.log('\n');
+const votes = ['y', 'y', 'n', 'y', 'n', 'y', 'n', 'y', 'n', 'n', 'n', 'y', 'y'];
+console.log("votes: ", votes);
+const resultsTally = votes.reduce((tally, val) => {
+  if(tally[val]) {
+    tally[val]++;
+  } else {
+    tally[val] = 1;
+  }
+  return tally
+}, {})
+console.log("resultsTally: ", resultsTally);
+
+console.log('\n');
+const resultsTally2 = votes.reduce((tally, val) => {
+  tally[val] = (tally[val] || 0) + 1;
+  return tally;
+}, {});
+console.log("resultsTally2: ", resultsTally2);
+
+console.log('\n');
+const groupedByRatings = bookz.reduce((groupedBooks, book) => {
+  const key = Math.floor(book.rating);
+  if(!groupedBooks[key]) groupedBooks[key] = [];
+  groupedBooks[key].push(book);
+  return groupedBooks;
+}, {})
+console.log(groupedByRatings);
