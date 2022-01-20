@@ -78,7 +78,41 @@ console.log(giveMeFour(...('GOAT')));
 
 
 console.log('\n');
+const cephalopods = ['dumbo octopus', 'humboldt squid', 'flamboyant cuttlefish'];
+
+const gastropods = ['giant african snail', 'banana slug', 'variable neon slug'];
+
+const cnidaria = ['fire coral', 'moon jelly'];
+
+const mollusca = [...cephalopods, ...gastropods];
+console.log("mollusca: ", mollusca);
+// The order matters
+const mollusca2 = [...gastropods, ...cephalopods];
+console.log("mollusca2");
+ 
+console.log("mollusca + garden slug", ['garden slug', gastropods]);
+
+console.log("mollusca + garden slug", ['garden slug', ...gastropods, ...cephalopods]);
+
+const inverts = [...cnidaria, ...gastropods, ...cephalopods];
+console.log("inverts: ", inverts);
+
+console.log(cephalopods.concat(gastropods));
+
+// Spread clones, a new Array in memory, with a new unique reference
+const cephCopy = [...cephalopods];
+console.log("cephCopy: ", cephCopy);
+// false, They are not the same
+console.log("cephCopy === cephalopods: ", cephCopy === cephalopods);
+
 console.log('\n');
+console.log("abcdefg".split(''));
+console.log([...['abcdegf']]);
+console.log([...'abcdefg']);
+console.log([...'abc', ...'def', ...'HELLO!!']);
+console.log([...'abc', ...'def', 'HELLO!!']);
+
+
 console.log('\n');
 console.log('\n');
 console.log('\n');

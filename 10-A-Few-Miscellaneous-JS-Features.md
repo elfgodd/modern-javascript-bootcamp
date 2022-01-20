@@ -62,3 +62,20 @@ Math.max(...nums); // 67
 
 Expands an iterable (array, string, etc.)
 into a list of arguments
+
+### SPREAD In Array Literals
+
+Create a new array using an existing array
+Spreads the elements from on array into a new array
+
+const nums1 = [1, 2, 3];
+const nums2 = [4, 5, 6];
+
+[ ...nums1 ...nums2 ];
+// [1, 2, 3, 4, 5, 6]
+
+[ 'a', 'b', ...nums2 ];
+// ['a', 'b', 4, 5, 6]
+
+[ ...nums1, ...num2, 7, 8, 9];
+// [1, 2, 3, 4, 5, 6, 7, 8, 9]
