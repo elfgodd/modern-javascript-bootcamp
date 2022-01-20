@@ -112,10 +112,67 @@ console.log([...'abcdefg']);
 console.log([...'abc', ...'def', ...'HELLO!!']);
 console.log([...'abc', ...'def', 'HELLO!!']);
 
+console.log('\n');
+const feline = { legs: 4, family: 'Felidae' };
+const canine = { family: 'Caninae', furry: true, legs: 4 };
+
+const dog = {
+  ...canine,
+  isPet: true,
+  adorable: true
+}
+console.log("dog: ", dog);
+
+const houseCat = {
+  ...feline,
+  isGrumpy: true,
+  personality: 'unpredictable'
+}
+console.log("houseCat: ", houseCat);
+
+const catDog = {
+  ...canine, ...feline
+}
+console.log("catDog: ", catDog);
+
+const tripod = {
+  ...canine,
+  legs: 3
+}
+console.log(tripod);
+
+// Orders does matter
+const tripod2 = {
+  legs: 3,
+  ...canine
+}
+console.log("tripod2: ", tripod2);
+
+// Creating an Object from catDog that was created from 2 other objects
+const catDogClone = {
+  ...catDog
+}
+console.log("catDogClone: ", catDogClone);
+// Not the same reference
+console.log("catDogClone === catDog: ?", catDogClone === catDog);
 
 console.log('\n');
+// You can only Spread Objects into another Objects, this is the only context
+// const arrayObjectSpread = [...dog]; // Error object is not iterable
+
+// console.log(Math.max(...dog)); // Error is not iterable
+// We get key value pairs based in indexis
+console.log({...[4, 5, 6]});
+console.log({...'abcde'});
+const random = [...'hello', {
+  ...catDog
+}];
+console.log("random: ", random);
 console.log('\n');
-console.log('\n');
+const random2 = [[...'hello'], {
+  ...catDog
+}];
+console.log("random2: ", random2);
 console.log('\n');
 console.log('\n');
 console.log('\n');
