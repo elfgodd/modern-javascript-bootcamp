@@ -55,11 +55,28 @@ const greet2 = (person, greeting = 'hi', punctuation = '!' ) => {
 console.log(greet2('anya'));
 console.log(greet2('rose', '?'));
 
+console.log('\n');
+console.log(Math.max(3, 4, 5, 6, 7,12 ,19, 99, 3));
+console.log(Math.min(3, 4, 5, 6, 7,12 ,19, 99, 3));
+console.log(Math.min([3, 4, 5, 6, 7,12 ,19, 99, 3]));
 
 console.log('\n');
+function giveMeFour(a, b, c, d) {
+  console.log('a', a);
+  console.log('b', b);
+  console.log('c', c);
+  console.log('d', d); 
+}
+console.log(giveMeFour(4, 5, 6, 7));
+
+const colors = ['red', 'orange', 'yellow', 'green'];
+console.log(giveMeFour(colors))
 console.log('\n');
+console.log(giveMeFour(...colors));
 console.log('\n');
-console.log('\n');
+console.log(giveMeFour(...('GOAT')));
+
+
 console.log('\n');
 console.log('\n');
 console.log('\n');
