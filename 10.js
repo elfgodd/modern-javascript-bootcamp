@@ -195,7 +195,7 @@ function sum3() {
     return total + currVal;
   })
 }
-console.log(sum3(1, 2, 3, 4, 5));
+console.log("sum3: ", sum3(1, 2, 3, 4, 5));
 
 console.log('\n');
 
@@ -219,8 +219,45 @@ console.log('\n');
 // console.log(argArrowFunc());
 
 console.log('\n');
+function sum4(...nums) {
+  console.log(nums);
+}
+sum4(4, 5, 6, 7);
+
+console.log('\n');
+function sum5(...nums) {
+  return nums.reduce((total, currVal) => {
+    return total + currVal;
+  })
+}
+console.log("sum5: ", sum5(4, 5, 6, 7));
+
+console.log('\n');
+// Order does matter
+// Rest parameter must be the last formal parameter
+function fullName2(first, last, ...titles) {
+  console.log('first: ', first);
+  console.log('last: ', last);
+  console.log('titles: ', titles);
+}
+fullName2('tom', 'jones', 'III', 'order of the phoenix');
+
+console.log('\n');
+const multiplyRest = (...mul) => (
+  mul.reduce((total, currVal) => {
+   return total * currVal;
+  })
+)
+console.log("multiplyRest: ", multiplyRest(2, 3, 4));
+
 console.log('\n');
 console.log('\n');
 console.log('\n');
 console.log('\n');
+console.log('\n');
+console.log('\n');
+console.log('\n');
+console.log('\n');
+console.log('\n');
+
 

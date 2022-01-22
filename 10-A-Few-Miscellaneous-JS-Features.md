@@ -120,3 +120,15 @@ return total;
 }
 sumAll(8, 4, 3, 2); // 17
 sumAll(2, 3); // 5
+
+### REST PARAMS
+
+Collects all remaining arguments into an actual array
+
+function sumAll(...nums) {
+let total = 0;
+for (let n of nums) total += n;
+return total;
+}
+sumAll(1, 2); // 3
+sumAll(1, 2, 3, 4, 5); // 15
