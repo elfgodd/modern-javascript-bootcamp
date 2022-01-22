@@ -284,9 +284,57 @@ console.log("winner: ", winner);
 console.log("others: ", others);
 
 console.log('\n');
+const runner = {
+first: "Eliud",
+last: "Kipchoge",
+country: "Kenya",
+title: "Elder of the Order of the Golden Heart of Kenya"
+}
+console.log("runner: ", runner);
 console.log('\n');
+// Order doesn't matter at all
+const {first, title, time} = runner;
+// No Error with time, just added as undefined
+console.log("first: ", first, "title: ", title, "time: ", time);
 console.log('\n');
+const { country: nation, title: honorific } = runner;
+// Makes a variables named nation / honorific based on the value inside country / title
+console.log("country: ", nation, "honorific: ", honorific );
+
 console.log('\n');
+const { first: first2, last: last2, ...others2} = runner;
+console.log(first2);
+console.log(last2);
+console.log(others2);
+
 console.log('\n');
+const results = [{
+  first: "Eliud",
+  last: "Kipchoge",
+  country: "Kenya",
+},
+{
+  first: 'Feyisa',
+  last: 'Lilesa',
+  country: 'Ethiopia'
+},
+{
+  first: 'Galen',
+  last: 'Rupp',
+  country: 'United States'
+}
+]
+console.log("results Object: ", results);
+console.log('\n');
+
+const [{first: goldWinner},{country: runner2Country}] = results;
+console.log("goldWinner: ", goldWinner);
+console.log("runner2Country: ", runner2Country);
+
+console.log('\n');
+const [,,bronzeRunner] = results;
+console.log(bronzeRunner.first);
+const {country: bronzeCountry} = bronzeRunner;
+console.log("bronzeCountry: ", bronzeCountry);
 
 
