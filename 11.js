@@ -81,6 +81,31 @@ const addPropComputed = (obj, key, value) => {
 const resComputed = addPropComputed(teamComputed, 'sad', 'sadEmoji:(');
 console.log("resComputed", resComputed);
 
+console.log("\n");
+/* Adding Methods to Objects */
+const add = function(x , y) {
+  return x + y;
+}
+
+const math = {
+  add
+}
+console.log("math: ", math);
+console.log("math.add: ", math.add);
+console.log("math.add(2, 5): ", math.add(2, 5));
 
 console.log("\n");
-console.log("\n");
+const math2 = {
+  numbers2: [1, 2, 3, 4, 5],
+
+  add2: function(x, y) {
+    return x + y;
+  },
+  multiply2: function(x, y) {
+    return x * y;
+  }
+}
+console.log("math2.add2: ", math2.add2(2, 5));
+console.log("math2.multiply2: ", math2.multiply2(2, 5));
+console.log("math2.mumbers2: ", math2.numbers2);
+console.log("math2: ", math2);

@@ -40,3 +40,21 @@ const userRoles = {
 [user]: 'Admin'
 }
 userRoles: // {Jools: "Admin"}
+
+### METHODS
+
+We can add functions as properties on objects
+
+We call them methods!
+
+CONST MATH = {
+multiply: function(x, y) {
+return X x Y;
+},
+divide : function (x, y) {
+return x / y;
+},
+square : function(x) {
+return X x X;
+}
+};
