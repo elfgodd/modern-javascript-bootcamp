@@ -173,9 +173,51 @@ const random2 = [[...'hello'], {
   ...catDog
 }];
 console.log("random2: ", random2);
+
 console.log('\n');
+function sum() {
+  console.log(arguments);;
+}
+sum(1, 2, 3);
+
 console.log('\n');
+// function sum2() {
+  // Error, arguments is not an array
+  // arguments.reduce((total, currVal) => {
+  //   return total + currVal
+  // })
+// }
+// sum2(1, 2, 3);
+
+function sum3() {
+  const argsArr = [...arguments];
+  return argsArr.reduce((total, currVal) => {
+    return total + currVal;
+  })
+}
+console.log(sum3(1, 2, 3, 4, 5));
+
 console.log('\n');
+
+// Issue with the argument object
+// Problem collecting remaining arguments
+// Arguments contain every argument passed in
+// I want the last 2 be grouped not all of them
+function fullName(first, last) {
+  console.log(arguments);
+  console.log(first);
+  console.log(last);
+}
+console.log(fullName('tom', 'jones', 'III', 'order of the phoenix' ));
+
+console.log('\n');
+// argument doesn't work with => arrow functions
+// Error arguments is not defined
+// const argArrowFunc = () => {
+//   console.log(arguments);
+// }
+// console.log(argArrowFunc());
+
 console.log('\n');
 console.log('\n');
 console.log('\n');

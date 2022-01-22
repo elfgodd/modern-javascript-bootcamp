@@ -96,3 +96,27 @@ const lion = { ...feline, genus: 'Panthera' };
 
 const catDog = { ...feline, ...canine };
 // { legs: 4, family: 'Caninae', furry: true }
+
+### REST
+
+It looks like spread, bt it's not!
+
+### THE ARGUMENTS OBJECT
+
+Available inside every function
+It's an array-like object
+
+- Has a length property
+- Does not have array methods like push/pop
+  Contains all the arguments passed to the function
+  Not available inside of arrow functions!
+
+function sumAll() {
+let total = 0;
+for (let i = 0; i < arguments.length; i++) {
+total += arguments[i];
+}
+return total;
+}
+sumAll(8, 4, 3, 2); // 17
+sumAll(2, 3); // 5
