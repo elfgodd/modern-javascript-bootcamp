@@ -338,3 +338,35 @@ const {country: bronzeCountry} = bronzeRunner;
 console.log("bronzeCountry: ", bronzeCountry);
 
 
+console.log('\n');
+console.log("runner again: ", runner);
+console.log('\n');
+function print(person) {
+  const {first, last, title} = person;
+console.log(`${first} ${last} ${title}`);
+}
+print(runner);
+
+console.log('\n');
+function print2({first, last, title}) {
+  console.log(`${first} ${last} ${title}`);
+}
+print2(runner);
+
+console.log('\n');
+const response = [
+  'HTTP/1.1',
+  '200 OK',
+  'application/json'
+]
+console.log("response: ", response);
+
+console.log('\n');
+const [,parseResponse] = response;
+console.log("parseResponse - Status: ", parseResponse);
+
+console.log('\n');
+function desResponse([protocol, status, contentType]) {
+  console.log(`Status: ${status}`);
+}
+desResponse(response);

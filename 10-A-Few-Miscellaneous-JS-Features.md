@@ -167,3 +167,15 @@ const {first, last, country} = runner;
 first; // "Eliud"
 last; // "Kipchoge"
 country; // "Kenya"
+
+### PARAM Destructuring
+
+const fullName = ({first, last}) => {
+return `${first} ${last}`
+}
+const runner = {
+first: "Eliud",
+last: "Kipchoge",
+country: "Kenya",
+}
+fullName(runner); // "Eliud Kipchoge"
