@@ -58,3 +58,19 @@ square : function(x) {
 return X x X;
 }
 };
+
+### SHORTHAND
+
+We do this so often that there's a new
+shorthand way of adding methods
+
+const math = {
+blah: 'Hi!',
+add(x, y) {
+return x + y;
+},
+multiply(x, y) {
+return X x Y;
+}
+}
+math.add(50, 60); // 110

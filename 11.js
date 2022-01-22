@@ -109,3 +109,24 @@ console.log("math2.add2: ", math2.add2(2, 5));
 console.log("math2.multiply2: ", math2.multiply2(2, 5));
 console.log("math2.mumbers2: ", math2.numbers2);
 console.log("math2: ", math2);
+
+console.log("\n");
+const auth = {
+  username: 'TommyBot',
+  login() {
+    console.log("LOGGED YOU IN!");
+  },
+  logout() {
+    console.log("GOODBYE");
+  }
+}
+console.log("auth: ", auth);
+
+
+console.log("\n");
+console.log("\n");
+console.log("\n");
+console.log("\n");
+console.log("\n");
+
+console.log("\n");
