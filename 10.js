@@ -251,9 +251,38 @@ const multiplyRest = (...mul) => (
 console.log("multiplyRest: ", multiplyRest(2, 3, 4));
 
 console.log('\n');
+const raceResults = [
+  'Eliud Kipchoge',
+  'Feyisa Lelisa',
+  'Galen Rupp',
+  'Ghirmay Ghebreslassie',
+  'Alphonce Simbu',
+  'Jared Ward'
+];
+
+const gold = raceResults[0];
+const silver = raceResults[1];
+const bronze = raceResults[2];
+console.log("Gold: ", gold)
+console.log("Silver: ", silver);
+console.log("Bronze: ", bronze);
+
 console.log('\n');
+// Positions matters
+const [gold2, silver2, bronze2] = raceResults;
+console.log("Gold: ", gold2)
+console.log("Silver: ", silver2);
+console.log("Bronze: ", bronze2);
+
 console.log('\n');
+// Choosing Fourth runner
+const [ , , , fourth ] = raceResults;
+console.log("fourth runner: ", fourth);
 console.log('\n');
+const [ winner, ...others] = raceResults;
+console.log("winner: ", winner);
+console.log("others: ", others);
+
 console.log('\n');
 console.log('\n');
 console.log('\n');

@@ -132,3 +132,25 @@ return total;
 }
 sumAll(1, 2); // 3
 sumAll(1, 2, 3, 4, 5); // 15
+
+### DESTRUCTURING
+
+A short, clean syntax to 'unpack':
+
+- Values from arrays
+- Properties from objects
+
+Into distinct variables
+
+### ARRAY Destructuring
+
+const raceResults = [ 'Eliud Kipchoge', 'Feyisa Lelisa', 'Galen Rupp'];
+
+const [ gold, silver, bronze ] = raceResults;
+gold; // "Eliud Kipchoge"
+silver; // "Feyisa Lelisa"
+bronze; // "Galen Rupp"
+
+const [ fastest, ...everyoneElse ] = raceResults;
+fastest; // "Eliud Kipchoge"
+everyoneElse; // ["Feyisa Lelisa", "Galen Rupp"]
