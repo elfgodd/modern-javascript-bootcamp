@@ -31,9 +31,56 @@ const getStats2 = (arr) => {
 
 console.log("getStats2: ", getStats2(reviews));
 
+/* Computed Properties */
+
 console.log("\n");
+const role = 'host';
+const person = 'Jools Holland';
+const role2 = 'Director';
+const person2 = 'James Cameron';
+
+const team = {
+  role: person
+}
+// team: { role: 'Jools Holland' }
+console.log("team: ", team);
+
+const team2 = {};
+// team2: {host: 'Jools Holland'}
+team2[role] = person;
+console.log("team2: ", team2);
+team2[role2] = person2;
+console.log("team2: ", team2);
+team2.role = person;
+console.log("team2: ", team2);
+
 console.log("\n");
+const teamComputed = {
+  [role]: person,
+  [role2]: person2,
+  [1+6+9]: 'sixteen',
+}
+console.log("teamComputed: ", teamComputed);
+
 console.log("\n");
+function addProp(obj, k, v) {
+  const copy = {...obj};
+  copy[k] = v;
+  return copy;
+}
+const res = addProp(teamComputed, 'happy', ':)');
+console.log("addProp res: ", res);
+
 console.log("\n");
+const addPropComputed = (obj, key, value) => {
+  return {
+    ...obj,
+    [key]: value
+  }
+}
+const resComputed = addPropComputed(teamComputed, 'sad', 'sadEmoji:(');
+console.log("resComputed", resComputed);
+
+
 console.log("\n");
 console.log("\n");

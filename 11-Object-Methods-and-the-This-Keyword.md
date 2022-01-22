@@ -25,3 +25,18 @@ const avg = sum / reviews.length;
 
 const stats = {min, max, sum, avg} // New!
 stats; // { min: 2.8, max: 5, sum: 26.74, avg: 3.82 }
+
+### COMPUTED PROPERTIES
+
+Improvement for the Object Literals Syntax
+We can add a property with a dynamic key
+
+We can use a variable as a key name in an
+object literal property!
+
+const user = 'Jools';
+
+const userRoles = {
+[user]: 'Admin'
+}
+userRoles: // {Jools: "Admin"}
