@@ -82,6 +82,7 @@ const resComputed = addPropComputed(teamComputed, 'sad', 'sadEmoji:(');
 console.log("resComputed", resComputed);
 
 console.log("\n");
+
 /* Adding Methods to Objects */
 const add = function(x , y) {
   return x + y;
@@ -110,6 +111,7 @@ console.log("math2.multiply2: ", math2.multiply2(2, 5));
 console.log("math2.mumbers2: ", math2.numbers2);
 console.log("math2: ", math2);
 
+/* Method Shorthand Syntax */
 console.log("\n");
 const auth = {
   username: 'TommyBot',
@@ -122,10 +124,60 @@ const auth = {
 }
 console.log("auth: ", auth);
 
+console.log("\n");
+function sayHi() {
+  console.log("HI");;
+  console.log(this);
+}
+sayHi();
 
 console.log("\n");
+const personThis = {
+  first: 'Cherilyn',
+  last: 'Sarkisian',
+  nickName: 'Cher',
+  fullName() {
+    console.log(this);
+    console.log(`${this.first} ${this.last} AKA ${this.nickName}`);
+  }
+}
+console.log("personThis: ", personThis);
+personThis.fullName();
+
 console.log("\n");
+// Destructuring properties props from 'this'
+const personThisDes = {
+  first: 'Cherilyn',
+  last: 'Sarkisian',
+  nickName: 'Cher',
+  fullName() {
+    const {first, last, nickName} = this;
+    console.log(`${first} ${last} AKA ${nickName}`);
+  }
+}
+personThisDes.fullName();
+// Changing personThis nickName
+personThis.nickName = 'CHERRRRRR';
+console.log("personThis.nickName NEW: ", personThis.nickName);
+personThis.fullName();
+
 console.log("\n");
+const persona1 = {
+  first: 'John',
+  last: 'Jones',
+  nickName: 'daBeast',
+  fullName() {
+    const {first, last, nickName} = this;
+    return `${first} ${last} AKA ${nickName}`;
+  },
+  printBio() {
+    const fullName = this.fullName();
+    console.log(`${fullName} is a person!`);
+  }
+}
+persona1.printBio();
+
+
 console.log("\n");
 console.log("\n");
 

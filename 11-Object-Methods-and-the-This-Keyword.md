@@ -74,3 +74,25 @@ return X x Y;
 }
 }
 math.add(50, 60); // 110
+
+### THIS
+
+The keyword this can be major point of confusion
+and misery and hardship and general suffering
+in the life of a new JS developer
+
+### THIS IN METHODS
+
+Use the keyword this to access other
+properties on the same object
+
+const person = {
+first: 'Robert',
+last: 'Herjavec,
+fullName() {
+return `${this.first} ${this.last}`
+}
+}
+person.fullName(); // 'Robert Herjavec'
+person.last = 'Plant';
+person.fullName(); // 'Robert Plant'
