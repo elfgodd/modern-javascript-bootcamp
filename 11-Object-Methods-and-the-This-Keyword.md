@@ -96,3 +96,9 @@ return `${this.first} ${this.last}`
 person.fullName(); // 'Robert Herjavec'
 person.last = 'Plant';
 person.fullName(); // 'Robert Plant'
+
+### The value of THIS
+
+Depends on the invocation context of the function it is used in
+
+###

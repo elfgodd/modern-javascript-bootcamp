@@ -125,6 +125,9 @@ const auth = {
 console.log("auth: ", auth);
 
 console.log("\n");
+/* Using THIS in Methods */
+// THIS inside a regular function putted in an object
+// THIS refers to the WINDOW OBJECT in the browser
 function sayHi() {
   console.log("HI");;
   console.log(this);
@@ -132,6 +135,8 @@ function sayHi() {
 sayHi();
 
 console.log("\n");
+// THIS inside of a Method
+// Is a way of accessing the Parent Object, where the method is located
 const personThis = {
   first: 'Cherilyn',
   last: 'Sarkisian',
@@ -171,14 +176,35 @@ const persona1 = {
     return `${first} ${last} AKA ${nickName}`;
   },
   printBio() {
+    console.log(this);
     const fullName = this.fullName();
     console.log(`${fullName} is a person!`);
+  },
+  laugh: () => {
+    console.log(this);
+    console.log(`${this.nickName} says HAHAHAHA`);;
   }
 }
 persona1.printBio();
+persona1.laugh();
+
+console.log("\n");
+/* THIS Invocation Context */
+
+// pointing variable printBio to the function
+// Error: this.fullName is not a func
+// Error: is referencing the window object
+// const printBio = person.printBio;
+// console.log(printBio());
 
 
 console.log("\n");
 console.log("\n");
-
+console.log("\n");
+console.log("\n");
+console.log("\n");
+console.log("\n");
+console.log("\n");
+console.log("\n");
+console.log("\n");
 console.log("\n");
