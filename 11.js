@@ -197,8 +197,41 @@ console.log("\n");
 // const printBio = person.printBio;
 // console.log(printBio());
 
-
 console.log("\n");
+/* Annoyomatic Demo */
+const annoyer = {
+  phrases: ["literally", "cray cray", "I can't even",
+  "Totes!", "YOLO", "Can't Stop, Won't Stop"],
+  
+  pickPhrase() {
+    const { phrases }  = this;
+    const idx = Math.floor(Math.random() * phrases.length);
+    return phrases[idx]
+  },
+  start() {
+    // // THIS here is set to the Object
+    // setInterval(function() {
+    //   // THIS here is set to the Window
+    //   // Error this.pickPhrase is not a function
+    //   // console.log(this.pickPhrase());
+    // }, 3000)
+    this.timerId = setInterval(() => {
+      console.log(this.pickPhrase());
+    }, 3000)
+   },
+   // Run this to stop the setInterval
+   stop() {
+     clearInterval(this.timerId);
+     console.log("PHEW THANK HEAVENS THAT IS OVER!");
+   }
+ }
+console.log("Annoyer.pickPhrase(): ", annoyer.pickPhrase());
+
+// annoyer.start();
+// annoyer.stop();
+ // setInterval is in the Window Object
+ // setInterval(func, 3000)
+
 console.log("\n");
 console.log("\n");
 console.log("\n");
