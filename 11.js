@@ -233,9 +233,163 @@ console.log("Annoyer.pickPhrase(): ", annoyer.pickPhrase());
  // setInterval(func, 3000)
 
 console.log("\n");
+/* Putting It All Together Deck Of Cards */
+function makeDeck() {
+  const deck = [];
+  const suits = ['hearts', 'diamonds', 'spades', 'clubs'];
+  const values = '2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A';
+  for (let value of values.split(',')) {
+    for (let suit of suits) {
+      // Shorthand
+      deck.push({ value, suit })
+      // deck.push({value: value, suit: suit})
+    }
+  }
+  return deck;
+}
+console.log(makeDeck());
+
+function drawCard(deck) {
+  return deck.pop();
+}
+
+const myDeck = makeDeck();
+const card1 = drawCard(myDeck);
+const card2 = drawCard(myDeck);
+console.log("card1: ", card1);
+console.log("card2: ", card2);
+console.log("makeDeck: ", makeDeck());
+console.log("myDeck: ", myDeck);
+
+console.log("\n");
+const myDeck2 = {
+  deck2: [],
+  drawnCards: [],
+  suits: ['hearts', 'diamonds', 'spades', 'clubs'],
+  values: '2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A',
+  initializeDeck() {
+    const { suits, values, deck2 } = this;
+    for (let value of values.split(',')) {
+      for (let suit of suits) {      
+        deck2.push({ value, suit });      
+      }
+    }
+  // return deck2;
+  },
+  drawCard() {
+    const card = this.deck2.pop();
+    this.drawnCards.push(card);
+    return card;
+  },
+  drawMultiple(numCards) {
+    const cards = [];
+    for(let i = 0; i < numCards; i++) {
+      cards.push(this.drawCard());
+    }
+    return cards;
+  },
+  shuffle() {
+    const { deck2 } = this;
+    // loop over array backwards
+    for (let i = deck2.length - 1; i > 0; i--) {
+      // Pick random index before current element
+      let j = Math.floor(Math.random() * (i + 1));
+      // swap
+      [ deck2[i], deck2[j] ]  = [ deck2[j], deck2[i] ];
+  }
+}
+}
+console.log("myDeck2: ", myDeck2);
+// This initializes the function inside myDeck2
+console.log("myDeck2.initializeDeck: ", myDeck2.initializeDeck());
+console.log("myDeck2.deck2", myDeck2.deck2);
+const myDeck2Card1 = myDeck2.drawCard();
+const myDeck2Card2 = myDeck2.drawCard();
+const myDeck2Card3 = myDeck2.drawCard();
+console.log("myDeck2Card1: ", myDeck2Card1);
+console.log("myDeck2Card2: ", myDeck2Card2);
+console.log("myDeck2Card3: ", myDeck2Card3);
+console.log("myDeck2: ", myDeck2);
+console.log("myDeck2.drawnCards: ", myDeck2.drawnCards);
+const myDeckMultiple1 = myDeck2.drawMultiple(8);
+console.log("myDeckMultiple1: ", myDeckMultiple1);
+
+console.log("\n");
+console.log("myDeck2: ", myDeck2);
+console.log("myDeck2.shuffle: ", myDeck2.shuffle());
+console.log("myDeck2: ", myDeck2);
+console.log("myDeck2.deck2: ", myDeck2.deck2);
+
+// function shuffle(arr) {
+//   // loop over array backwards
+//   for (let i = arr.length - 1; i > 0; i--) {
+//     // Pick random index before current element
+//     let j = Math.floor(Math.random() * (i + 1));
+//     //
+//     [ arr[i], arr[j] ]  = [ arr[j], arr[i] ];
+//     console.log(arr);
+//   }
+// }
+// console.log("shuffle: ", shuffle(['a', 'b', 'c', 'd', 'e', 'f']));
+
 console.log("\n");
 console.log("\n");
+function initializeDeckX() {
+  const deck = [];
+  const suits = ['hearts', 'diamonds', 'spades', 'clubs'];
+  const values = '2,3,4,5,6,7,8,9,10,J,Q,K,A';
+  for (let value of values.split(',')) {
+    for (let suit of suits) {
+      deck.push({value, suit});
+    }
+  }
+  return deck;
+}
+
+function drawCardX(deck, drawnCards) {
+  const card = deck.pop();
+  drawnCards.push(card);
+  return card;
+}
+
+function drawMultipleX(numCards, deck, drawnCards) {
+  const cards = [];
+  for (let i = 0; i < numCards; i++) {
+    cards.push(drawCardX(deck, drawnCards))
+  }
+  return cards;
+}
+
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {    
+    let j = Math.floor(Math.random() * (i + 1));
+    [ arr[i], arr[j] ]  = [ arr[j], arr[i] ];
+  }
+}
+
+const firstDeck = initializeDeckX();
+const drawnCards = [];
+shuffle(firstDeck);
+const hand1 = drawMultipleX(2, firstDeck, drawnCards);
+const hand2 = drawMultipleX(2, firstDeck, drawnCards);
+const pokerHand = drawMultipleX(5, firstDeck, drawnCards);
+
+console.log('firstDeck: ', firstDeck);
+console.log('hand1: ', hand1);
+console.log('hand2: ', hand2);
+console.log("drawnCards: ", drawnCards);
+
 console.log("\n");
+// Doing same thing with the Object version
+// myDeck2.initializeDeck();
+// myDeck2.shuffle();
+const h1 = myDeck2.drawMultiple(2);
+const h2 = myDeck2.drawMultiple(2);
+const h3 = myDeck2.drawMultiple(5);
+console.log("h1: ", h1);
+console.log("h2: ", h2);
+console.log("h3: ", h3);
+
 console.log("\n");
 console.log("\n");
 console.log("\n");
