@@ -63,3 +63,16 @@ for (let input of inputs) {
 }
 
 console.log('\n');
+/* getElementsByClassName */
+console.log(document.getElementsByClassName('header'));
+// Select something doesn't exist
+// will return an empty collection HTMLCollection []
+console.log(document.getElementsByClassName('chickens'));
+// Select something based on the id, it's not going to work
+console.log(document.getElementsByClassName('main'));
+
+console.log(document.getElementsByClassName('special'));
+
+const ul = document.getElementsByTagName('ul')[0];
+console.log('ul: ', ul);
+console.log(ul.getElementsByClassName('special'));
