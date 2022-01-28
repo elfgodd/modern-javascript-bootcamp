@@ -56,6 +56,39 @@ h3.innerHTML +='<s>!!!!!</s>'
 const h4 = document.querySelector('h4');
 h4.innerText += '<b>xxx!!!!</b>'
 
+
+console.log('\n');
+console.log('/* #### value, src, href, and more ####*/');
+
+const inputs2 = document.getElementsByTagName('form')[1];
+console.log(inputs2);
+// Type something in the form2, name, passw, etc inputs and to grab that information execute this
+// inputs2[0].value
+// inputs2[1].value
+// inputs2[2].value
+// This gives us, true or false, if is checked or if it's not checked
+// inputs2[2].checked
+// This gives us the value of the range 100 - 500
+// inputs2[3].value
+
+// Reset the input user to empty with this
+// inputs2[0].value = ''
+
+// Change the placeholder value
+// inputs2[1].placeholder = 'enter easy passw'
+
+console.log('\n');
+const a = document.querySelector('a');
+console.log('a.href: ', a.href);
+// Change the URL
+// a.href = 'https://www.google.com'
+
+console.log('\n');
+// Update the bear image
+// const img = document.querySelector('img');
+// img.src = 'https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
+
+
 console.log('\n');
 console.log('\n');
 console.log('\n');
