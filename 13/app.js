@@ -143,8 +143,33 @@ console.log("thirdLi.previousElementSibling: ", thirdLi.previousElementSibling.t
 console.log("thirdLi.previousElementSibling: ", thirdLi.previousElementSibling.previousElementSibling);
 console.log("thirdLi.previousElementSibling: ", thirdLi.previousElementSibling.previousElementSibling.textContent);
 console.log('\n');
+
+console.log('/* #### Changing Multiple Elements ####*/');
+
+const allLis = document.querySelectorAll('li');
+console.log("allLis: ", allLis[0].textContent);
+console.log("allLis: ", allLis[1].textContent);
+console.log("allLis: ", allLis[2].textContent);
 console.log('\n');
+
+for (let i = 0; i < allLis.length; i++) {
+  console.log(allLis[i].innerText);
+}
 console.log('\n');
+
+function forAllLis(){
+  for (let i = 0; i < allLis.length; i++) {
+    console.log(allLis[i].innerText);
+    // Runn this code to turn all li's to iAmTheChampion
+    // allLis[i].innerText = 'I am the champion';
+}}
+forAllLis();
+
+// Run this code to turn all li's to iAmTheChampion with bold text
+// for (let li of allLis) {
+//   li.innerHTML = 'I am the <b>Champion</b>';
+// }
+
 console.log('\n');
 console.log('\n');
 console.log('\n');
