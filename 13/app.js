@@ -106,9 +106,42 @@ range.setAttribute('min', '-500');
 
 
 console.log('\n');
+console.log('/* #### Finding Parent Children Siblings ####*/');
+
+const firstLi = document.getElementsByTagName('li')[0];
+console.log(firstLi); // li
+console.log(firstLi.parentElement); // ul
+console.log(firstLi.parentElement.parentElement); // section
+console.log(firstLi.parentElement.parentElement.parentElement); // body
+console.log(firstLi.parentElement.parentElement.parentElement.parentElement); // html
+console.log(firstLi.parentElement.parentElement.parentElement.parentElement.parentElement); // null
+
 console.log('\n');
+console.log(ul2);
+console.log(ul2.children);
+
 console.log('\n');
+console.log(ul2.children[0].innerText);
+console.log(ul2.children[1].innerText);
+console.log(ul2.children[2].innerText);
+
 console.log('\n');
+// Getting the next second thing, and the next of next second thing
+console.log("firstLi.textContent: ", firstLi.textContent);
+console.log(firstLi.nextElementSibling); // Peas
+console.log("firstLi.nextElementSibling.textContent: ", firstLi.nextElementSibling.textContent); // Peas
+console.log(firstLi.nextElementSibling.nextElementSibling); // Carrots
+console.log("firstLi.nextElementSibling.nextElementSibling.textContent: ", firstLi.nextElementSibling.nextElementSibling.textContent); // Carrots
+
+console.log('\n');
+/// Previous sibling, going backwards
+const thirdLi = firstLi.nextElementSibling.nextElementSibling
+console.log("thirdLi: ", thirdLi);
+console.log("thirdLi: ", thirdLi.textContent);
+console.log("thirdLi.previousElementSibling: ", thirdLi.previousElementSibling);
+console.log("thirdLi.previousElementSibling: ", thirdLi.previousElementSibling.textContent);
+console.log("thirdLi.previousElementSibling: ", thirdLi.previousElementSibling.previousElementSibling);
+console.log("thirdLi.previousElementSibling: ", thirdLi.previousElementSibling.previousElementSibling.textContent);
 console.log('\n');
 console.log('\n');
 console.log('\n');
