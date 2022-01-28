@@ -88,8 +88,23 @@ console.log('\n');
 // const img = document.querySelector('img');
 // img.src = 'https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
 
+console.log('/* #### Getting & Setting Attributes ####*/');
+const range = document.querySelector('input[type="range"]');
+console.log('input[type="range"]: ', range);
+range.getAttribute('type');
+console.log("range.getAttribute('type'): ", range.getAttribute('type'));
+range.getAttribute('max');
+console.log("range.getAttribute('max'): ", range.getAttribute('max'));
+range.getAttribute('min');
+console.log("range.getAttribute('min'): ", range.getAttribute('min'));
 
 console.log('\n');
+range.setAttribute('min', '-500');
+
+// This will change the range type from range to radio
+// range.setAttribute('type', 'radio');
+
+
 console.log('\n');
 console.log('\n');
 console.log('\n');
