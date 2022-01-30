@@ -184,7 +184,7 @@ const p = document.querySelector('p');
 p.style.color = 'green';
 p.style.backgroundColor = 'black';
 // This gives the styles applied to it
-console.log(p.style);
+console.log("p.style: ", p.style);
 p.style.fontSize = '24px'
 
 // Remember inline styles like this, has high priority
@@ -195,9 +195,26 @@ allLis.forEach((li, index) => {
   li.style.color = color;
 })
 
+console.log('\n');
+console.log('/* #### getComputedStyle ####*/');
+const li = document.querySelector('li');
+// Remember this won't work, unless you have inline styles
+document.querySelector('li').style.color;
+console.log("li: ", li);
+console.log("li.style.color: ", li.style.color);
 
 console.log('\n');
+// getComputedStyles, contains all the properties in css for a given element
+// all the possible properties and all of the  current values
+const stylesComputed = getComputedStyle(li);
+console.log("stylesComputed: ", stylesComputed);
+console.log("stylesComputed.color: ", stylesComputed.color);
+
 console.log('\n');
+const h2Computed = getComputedStyle(h2);
+console.log("h2Computed.color: ", h2Computed.color);
+console.log("h2Computed.fontSize: ", h2Computed.fontSize);
+
 console.log('\n');
 console.log('\n');
 console.log('\n');
