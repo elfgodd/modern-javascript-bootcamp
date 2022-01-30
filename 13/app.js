@@ -171,6 +171,31 @@ forAllLis();
 // }
 
 console.log('\n');
+console.log('/* #### Altering Styles ####*/');
+
+// This won't work unless the Styles are declare inline
+// Which is not a good idea to do inline styles
+console.log("h1.style: ", h1.style);
+console.log("h1.style.color: ", h1.style.color) ;
+
+h1.style.color = 'purple';
+
+const p = document.querySelector('p');
+p.style.color = 'green';
+p.style.backgroundColor = 'black';
+// This gives the styles applied to it
+console.log(p.style);
+p.style.fontSize = '24px'
+
+// Remember inline styles like this, has high priority
+colors = [ 'yellow', 'blue', 'red' ];
+allLis.forEach((li, index) => {
+  const color = colors[index]
+  console.log(li, color);
+  li.style.color = color;
+})
+
+
 console.log('\n');
 console.log('\n');
 console.log('\n');
