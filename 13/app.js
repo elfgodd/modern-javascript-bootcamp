@@ -216,5 +216,39 @@ console.log("h2Computed.color: ", h2Computed.color);
 console.log("h2Computed.fontSize: ", h2Computed.fontSize);
 
 console.log('\n');
+console.log('/* #### Manipulating Classes ####*/');
+// This syntax gets the first class todo inside the todos id element
+const todo = document.querySelector('#todos .todo');
+
+// Adding styles one by one
+// todo.style.color = 'gray';
+// todo.style.textDecoration = 'line-through';
+// todo.style.opacity = '50%';
+
+console.log("todo: ", todo);
+console.log("todo.getAttribute('class'): ", todo.getAttribute('class'));
+todo.getAttribute('class');
+
+// Downside of setAttribute is that it will overwrite replaces the class was there
+// todo.setAttribute('class', 'done');
+
+// Appling 2 classes, not also a good approach
+todo.setAttribute('class', 'todo done');
+
+// Removes the done class from todo
+todo.classList.remove('done')
+
+// Adds the done class to todo
+todo.classList.add('done');
+
+// Toggle adds a class on and off very useful 
+// It returns true or false
+todo.classList.toggle('done');
+
+
+console.log('\n');
+console.log('\n');
+console.log('\n');
+console.log('\n');
 console.log('\n');
 console.log('\n');
