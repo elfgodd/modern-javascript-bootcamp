@@ -245,9 +245,34 @@ todo.classList.add('done');
 // It returns true or false
 todo.classList.toggle('done');
 
+console.log('\n');
+console.log('/* #### Creating Elements ####*/');
+
+const newH2 = document.createElement('h4');
+console.log("newH2: ", newH2);
+// console.dir("newH2:", newH2);
+newH2.innerText = 'I love animals!';
+console.log("newH2: ", newH2);
+newH2.classList.add('special');
+console.log(newH2);
+
+const section = document.querySelector('section');
+section.appendChild(newH2);
 
 console.log('\n');
-console.log('\n');
+const newImg = document.createElement('img');
+console.log("img: ", newImg);
+newImg.src = 'https://images.unsplash.com/photo-1445583934509-4ad5ffe6ef08?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
+newImg.style.width = "300px";
+
+section.appendChild(newImg);
+
+const newLink = document.createElement('a');
+newLink.innerText = "Funny Chimpanzee, ClickMe!";
+newLink.href = 'https://www.youtube.com/watch?v=eX2qFMC8cFo';
+
+section.appendChild(newLink)
+
 console.log('\n');
 console.log('\n');
 console.log('\n');
