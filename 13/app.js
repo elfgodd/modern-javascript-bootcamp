@@ -271,9 +271,73 @@ const newLink = document.createElement('a');
 newLink.innerText = "Funny Chimpanzee, ClickMe!";
 newLink.href = 'https://www.youtube.com/watch?v=eX2qFMC8cFo';
 
-section.appendChild(newLink)
+section.appendChild(newLink);
 
 console.log('\n');
+console.log('/* #### Append, Prepend, & insertBefore ####*/');
+
+const parentUL = document.querySelector('ul');
+console.log(parentUL);
+
+const newLi = document.createElement('li');
+newLi.innerText = 'i am a new li';
+parentUL.appendChild(newLi);
+
+const newLi2 = document.createElement('li');
+newLi2.innerText = 'i am 2Second li';
+
+parentUL.insertBefore(newLi2, newLi);
+
+const newTodo = document.createElement('li');
+newTodo.innerText = 'Buy delicious cheese';
+
+const lastTodo = document.querySelectorAll('li.todo')[2];
+const ulTwo = document.querySelectorAll('ul')[2];
+console.log("lastTodo: ", lastTodo);
+console.log("ulTwo: ", ulTwo);
+
+ulTwo.insertBefore(newTodo, lastTodo);
+
+const i1 = document.createElement('i');
+const i2 = document.createElement('i');
+const i3 = document.createElement('i');
+const i4 = document.createElement('i');
+i1.innerText = 'i am italics1!';
+i2.innerText = 'i am italics2!';
+i3.innerText = 'i am italics3!';
+i4.innerText = 'i am italics4!';
+// beforebegin
+ulTwo.insertAdjacentElement('beforebegin', i1);
+// afterend
+ulTwo.insertAdjacentElement('afterend', i2);
+// afterbegin
+ulTwo.insertAdjacentElement('afterbegin', i3);
+// beforeend
+ulTwo.insertAdjacentElement('beforeend', i4);
+
 console.log('\n');
+console.log('/* #### removeChild & remove ####*/');
+
+const ulPeas = document.querySelector('section ul');
+console.log(ulPeas);
+
+// Searching in the whole document
+// document.querySelector('section .special');
+
+// Searching whitin the ul
+// this is an easier way
+const removePeas = ulPeas.querySelector('.special');
+const deletedPeas = ulPeas.removeChild(removePeas);
+console.log(deletedPeas);
+
+// Deleting h1 with the new way
+const h1Two = document.querySelectorAll('h1')[1];
+h1Two.remove();
+
+
+
+
+
+
 console.log('\n');
 console.log('\n');
