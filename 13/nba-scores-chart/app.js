@@ -84,42 +84,88 @@ const warriorsGames = [{
 }
 ]
 
-const ulParent = document.createElement('ul');
-for(let game of warriorsGames) {
-  const {
-    homeTeam,
-    awayTeam
-  } = game;
-  
+/* NBA Scorres Chart Refactor */
+
+const makeChart = (games, targetTeam) => {
+  const ulParent = document.createElement('ul');
+  for(let game of games) {
   const gameLi = document.createElement('li');
+  gameLi.innerHTML = getScoreLine(game);  
+  gameLi.classList.add(isWinner(game, targetTeam) ? 'win' : 'loss');
 
-  const {
-    team: hTeam,
-    points: hPoints
-  } = homeTeam;
+  ulParent.append(gameLi);
+  }
+  return ulParent;
+}
 
-  const {
-    team: aTeam,
-    points: aPoints
-  } = awayTeam;
+const isWinner = ({ homeTeam, awayTeam }, targetTeam) => {
+  const target = homeTeam.team === targetTeam ? homeTeam : awayTeam;
+  return target.isWinner;
+}
 
+const getScoreLine = ({homeTeam, awayTeam}) => {
+  const { team: hTeam, points: hPoints } = homeTeam;
+  const { team: aTeam, points: aPoints } = awayTeam;
   const teamNames= `${aTeam} @ ${hTeam}`;
   let scoreLine;
   if (aPoints > hPoints) {
     scoreLine = `<b>${aPoints}</b>-${hPoints}`;
-  } else {
+  }
+  else {
     scoreLine = `${aPoints}-<b>${hPoints}</b>`;
   }
-  const warriors = hTeam === 'Golden State' ? homeTeam : awayTeam;
-  gameLi.classList.add(warriors.isWinner ? 'win' : 'loss');
-
-  console.log(warriors);
-
-
-  gameLi.innerHTML = `${teamNames} ${scoreLine}`;
-  // console.log(scoreLine);
-  ulParent.append(gameLi);
-  // console.log(awayTeam.team, homeTeam.team);
+  return `${teamNames} ${scoreLine}`;
 }
 
-document.body.prepend(ulParent);
+const gsSection = document.querySelector('#gs');
+const hrSection = document.querySelector('#hr');
+const gsChart = makeChart(warriorsGames, 'Golden State');
+const hrChart = makeChart(warriorsGames, 'Houston');
+gsSection.appendChild(gsChart);
+hrSection.appendChild(hrChart);
+
+
+// const chart2 = makeChart(warriorsGames, 'Houston');
+//document.body.prepend(chart2);
+
+
+/* NBA Scores Chart part 1 */
+// const ulParent = document.createElement('ul');
+// for(let game of warriorsGames) {
+//   const {
+//     homeTeam,
+//     awayTeam
+//   } = game;
+  
+//   const gameLi = document.createElement('li');
+
+//   const {
+//     team: hTeam,
+//     points: hPoints
+//   } = homeTeam;
+
+//   const {
+//     team: aTeam,
+//     points: aPoints
+//   } = awayTeam;
+
+//   const teamNames= `${aTeam} @ ${hTeam}`;
+//   let scoreLine;
+//   if (aPoints > hPoints) {
+//     scoreLine = `<b>${aPoints}</b>-${hPoints}`;
+//   } else {
+//     scoreLine = `${aPoints}-<b>${hPoints}</b>`;
+//   }
+//   const warriors = hTeam === 'Golden State' ? homeTeam : awayTeam;
+//   gameLi.classList.add(warriors.isWinner ? 'win' : 'loss');
+
+//   console.log(warriors);
+
+
+//   gameLi.innerHTML = `${teamNames} ${scoreLine}`;
+//   // console.log(scoreLine);
+//   ulParent.append(gameLi);
+//   // console.log(awayTeam.team, homeTeam.team);
+// }
+
+// document.body.prepend(ulParent);
