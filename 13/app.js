@@ -333,11 +333,3 @@ console.log(deletedPeas);
 // Deleting h1 with the new way
 const h1Two = document.querySelectorAll('h1')[1];
 h1Two.remove();
-
-
-
-
-
-
-console.log('\n');
-console.log('\n');

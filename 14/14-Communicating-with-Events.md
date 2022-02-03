@@ -23,3 +23,13 @@ pasting
 audio start
 screen resize
 printing
+
+### addEventListener
+
+Specify the event type and call back to run
+
+const button = document.querySelector('h1);
+
+button.addEventListener('click', () => {
+alert('you clicked me!!);
+})
