@@ -41,13 +41,13 @@ console.log('btn4.onclick: ', btn4.textContent);
 // to the same button
 btn4.addEventListener('click', function() {
   console.log('btn4 clicked!');
-})
+});
 btn4.addEventListener('click', () => {
   console.log('btn4 Second clicked!')
-})
+});
 btn4.addEventListener('click', () => (
   console.log('btn4 Third clicked!')
-))
+));
 // It's null because we are not setting the onclick property
 // We are attaching an eventListener, which can have multiple 
 // of for a given event on a given element
@@ -55,16 +55,16 @@ console.log(btn4.onclick); // null
 
 btn4.addEventListener('mouseover', function() {
   btn4.innerText = 'stop touching me';
-})
+});
 btn4.addEventListener('mouseout', function() {
   btn4.innerText = 'btn4 clicked!';
-})
+});
 
 // Scroll eventListener
 // You need to at a lot of content to test this, but is working
 window.addEventListener('scroll', function() {
   console.log('stop scrolling');
-})
+});
 
 console.log('\n');
 console.log('/* #### The impossible Button Demo ####*/');
@@ -78,7 +78,7 @@ btnDemo1.addEventListener('mouseover', function() {
   const width = Math.floor(Math.random() * window.innerWidth)
   btnDemo1.style.left = `${width}px`;
   btnDemo1.style.top = `${height}px`;
-})
+});
 
 // window.screen
 // window.innerHeight
@@ -87,7 +87,7 @@ btnDemo1.addEventListener('mouseover', function() {
 btnDemo1.addEventListener('click', function() {
   btnDemo1.innerText = 'you got me!';
   document.body.style.backgroundColor = 'green';
-})
+});
 
 console.log('\n');
 console.log('/* #### Events on Multiple Elements #### */');
@@ -119,7 +119,7 @@ for (let color of colors) {
 const h1 = document.querySelector('h1');
 h1.addEventListener('mouseover', function(){
   console.log(this.innerText);
-})
+});
 
 console.log('\n');
 console.log('/* #### The Event Object #### */');
@@ -129,5 +129,39 @@ console.log('/* #### The Event Object #### */');
 
 // Find which key the user pressed
 document.body.addEventListener('keypress', function(e) {
-  console.log(e);
-})
+  // console.log(e);
+});
+
+console.log('\n');
+console.log('/* #### Key Events keypresses, keyup & keydown #### */');
+
+const input = document.querySelectorAll('input')[1];
+
+input.addEventListener('keydown', function() {
+  // console.log('key down');
+});
+
+input.addEventListener('keyup', function() {
+  // console.log('key up');
+});
+
+input.addEventListener('keypress', function() {
+  // console.log('key pressed');
+});
+
+const addItemInput = document.querySelector('#addItem');
+const itemsUL = document.querySelector('#items');
+
+addItemInput.addEventListener('keypress', function(evt) {
+  console.log(evt);
+  if(evt.key === 'Enter'){
+    if(!this.value) return;
+    // add a new item to list
+    console.log(this.value);
+    const newItemText = this.value;
+    const newItem = document.createElement('li');
+    newItem.innerText = newItemText;
+    itemsUL.append(newItem);
+    this.value = '';
+  }
+});
