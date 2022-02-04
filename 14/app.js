@@ -88,3 +88,34 @@ btnDemo1.addEventListener('click', function() {
   btnDemo1.innerText = 'you got me!';
   document.body.style.backgroundColor = 'green';
 })
+
+console.log('\n');
+console.log('/* #### Events on Multiple Elements ####*/');
+
+const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'indigo', 'violet'];
+
+const changeColor = function(box){
+  const h1 = document.querySelector('h1');
+  h1.style.color = this.style.backgroundColor;
+  console.log("this: ", this);
+  console.log('click a box: ', this.style.backgroundColor);
+}
+const container = document.querySelector('#boxes');
+
+for (let color of colors) {
+  const box = document.createElement('div');
+  box.style.backgroundColor = color;
+  box.classList.add('box');
+  container.append(box);
+  // keyword this inside an event handler,
+  // this will refer to the individual element
+  // that the event listener has been added to
+  box.addEventListener('click', changeColor)
+}
+
+// Example about this
+// this will make, Pick a Color get printed in the console browser
+const h1 = document.querySelector('h1');
+h1.addEventListener('mouseover', function(){
+  console.log(this.innerText);
+})

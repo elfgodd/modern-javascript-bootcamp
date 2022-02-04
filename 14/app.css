@@ -5,3 +5,16 @@
   height: 50px;
   width: 100px;
 }
+#boxes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+}
+h1 {
+  text-align: center;
+}
