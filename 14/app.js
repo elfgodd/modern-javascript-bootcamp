@@ -3,7 +3,7 @@
 // input        hits return   get search results
 // image        mouseover     display the img caption
 
-console.log('/* #### 2 Ways NOT to Add Events ####*/');
+console.log('/* #### 2 Ways NOT to Add Events #### */');
 const btnClicker = document.querySelector('#clicker')
 console.log("btnClicker: ", btnClicker);
 
@@ -29,7 +29,7 @@ btnClicker.ondblclick = function() {
 }
 
 console.log('\n');
-console.log('/* #### addEventListener ####*/');
+console.log('/* #### addEventListener #### */');
 
 const btn4 = document.querySelectorAll('button')[3];
 console.log('btn4.onclick: ', btn4.textContent);
@@ -90,11 +90,12 @@ btnDemo1.addEventListener('click', function() {
 })
 
 console.log('\n');
-console.log('/* #### Events on Multiple Elements ####*/');
+console.log('/* #### Events on Multiple Elements #### */');
 
 const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'indigo', 'violet'];
 
-const changeColor = function(box){
+const changeColor = function(evt){
+  console.log(evt);
   const h1 = document.querySelector('h1');
   h1.style.color = this.style.backgroundColor;
   console.log("this: ", this);
@@ -118,4 +119,15 @@ for (let color of colors) {
 const h1 = document.querySelector('h1');
 h1.addEventListener('mouseover', function(){
   console.log(this.innerText);
+})
+
+console.log('\n');
+console.log('/* #### The Event Object #### */');
+
+// evt, The event object is passed
+// and we have access to it
+
+// Find which key the user pressed
+document.body.addEventListener('keypress', function(e) {
+  console.log(e);
 })
