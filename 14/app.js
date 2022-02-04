@@ -65,3 +65,26 @@ btn4.addEventListener('mouseout', function() {
 window.addEventListener('scroll', function() {
   console.log('stop scrolling');
 })
+
+console.log('\n');
+console.log('/* #### The impossible Button Demo ####*/');
+
+const btnDemo1 = document.querySelectorAll('button')[4];
+console.log(btnDemo1.textContent);
+
+btnDemo1.addEventListener('mouseover', function() {
+  console.log('moveover!!');
+  const height = Math.floor(Math.random() * window.innerHeight);
+  const width = Math.floor(Math.random() * window.innerWidth)
+  btnDemo1.style.left = `${width}px`;
+  btnDemo1.style.top = `${height}px`;
+})
+
+// window.screen
+// window.innerHeight
+// window.innerWidth
+
+btnDemo1.addEventListener('click', function() {
+  btnDemo1.innerText = 'you got me!';
+  document.body.style.backgroundColor = 'green';
+})
