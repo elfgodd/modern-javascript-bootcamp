@@ -188,3 +188,40 @@ form.addEventListener('submit', function (e) {
   console.log('terms: ', termsCheckbox.checked)
   console.log('veggie: ', veggieSelect.value)
 })
+
+console.log('\n')
+console.log('/* #### Input & Change Events #### */')
+
+// const formData = {}
+
+// creditCardInput.addEventListener('input', (e) => {
+//   console.log('CC CHANGED!', e)
+//   formData['cc'] = e.target.value
+// })
+
+// veggieSelect.addEventListener('input', (e) => {
+//   console.log('VEGGIE CHANGED:', e)
+//   formData['veggie'] = e.target.value
+// })
+
+// termsCheckbox.addEventListener('input', (e) => {
+//   console.log('CHECKED CHANGED: ', e)
+//   formData['terms'] = e.target.checked
+// })
+
+// Another way to do it, adding a name=""
+
+const formData = {}
+for (let input of [creditCardInput, termsCheckbox, veggieSelect]) {
+  // destructure event, pulling the target what the app needs
+  input.addEventListener('input', ({ target }) => {
+    const { name, type, value, checked } = target
+    console.log(target.name)
+    formData[name] = type === 'checkbox' ? checked : value
+    console.log(formData)
+  })
+}
+
+// creditCard
+// agreeToTerms
+// selectedVeggie
