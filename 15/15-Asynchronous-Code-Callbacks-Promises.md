@@ -30,3 +30,10 @@ return square(a) + square(b) === square(c)
 }
 
 isRightTriangle(3, 4, 5); // true
+
+### JS IS SINGLE THREADED
+
+### WHAT DOEST THAT MEAN?
+
+At any given point in time, that single JS thread is running
+at most one line of JS code
