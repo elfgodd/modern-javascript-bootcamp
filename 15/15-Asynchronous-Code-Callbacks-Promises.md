@@ -37,3 +37,34 @@ isRightTriangle(3, 4, 5); // true
 
 At any given point in time, that single JS thread is running
 at most one line of JS code
+
+### What happens
+
+when something takes a long time?
+const newTodo = input.value; // get user input
+saveToDatabase(newTodo); // this could take a while!
+input.value = ''; // reset form
+
+### Fortunately...
+
+We have a workaround
+
+console.log('I print first!');
+setTimeout(() => {
+console.log('I print after 3 seconds');
+}, 3000);
+console.log('I print second!');
+
+CALLBACKS???!
+
+### OK BUT HOW?
+
+Browsers come with a Web APIs that are able to handle
+certain tasks in the background (like making requests
+or setTimeout)
+
+The JS call stack recognizes these Web API functions and
+passes them off to the browser to take care of
+
+Once the browser finishes those tasks, they return and are
+pushed onto the stack as a callback
