@@ -24,3 +24,21 @@ const makeRant = (phrase, el) => {
 console.log('HELLO')
 makeRant('I hate mayonnaise', document.body)
 // makeRant('If you have to cough, please cover your mouth', document.body)
+
+console.log('\n')
+console.log('/* #### Welcome to Callback Hell #### */')
+
+const btn = document.querySelector('button')
+
+setTimeout(() => {
+  btn.style.transform = `translateX(100px)`
+  setTimeout(() => {
+    btn.style.transform = `translateX(200px)`
+    setTimeout(() => {
+      btn.style.transform = `translateX(300px)`
+      setTimeout(() => {
+        btn.style.transform = `translateX(400px)`
+      }, 2500)
+    }, 2000)
+  }, 1500)
+}, 1000)
